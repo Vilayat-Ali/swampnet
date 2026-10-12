@@ -1,0 +1,28 @@
+[package]
+name = "swampnet"
+description = ""
+authors = [
+    "Syed Vilayat Ali Rizvi <syedvilayatalirizvi@proton.me>"
+]
+version = "0.1.0"
+edition = "2024"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+strip = true
+
+[dependencies]
+bytes = "1.12.1"
+criterion = { version = "0.8.2", features = ["async_tokio", "html_reports"] }
+rayon = "1.12.0"
+serde = { version = "1.0.229", features = ["derive"] }
+thiserror = "2.0.21"
+time = { version = "0.3.55", features = ["formatting", "local-offset"] }
+tokio = { version = "1.53.2", features = ["full"] }
+tokio-postgres = "0.7.18"
+tracing = "0.1.44"
+tracing-subscriber = { version = "0.3.23", features = ["ansi", "env-filter", "json", "local-time", "time"] }
+zerocopy = { version = "0.8.62", features = ["derive"] }
