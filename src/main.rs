@@ -6,9 +6,13 @@ use tracing::info;
 async fn main() -> SwampnetResult<()> {
     setup_logger();
 
-    let addr = "0.0.0.0:14550";
+    let addr = "0.0.0.0:8080";
     let socket = UdpSocket::bind(addr).await?;
-    info!("Swampnet active on {}", addr);
+    info!(
+        "Swampnet v{} started on {}",
+        env!("CARGO_PKG_VERSION"),
+        addr
+    );
 
     let mut buf = vec![0u8; 65535];
 

@@ -1,1 +1,21 @@
+# --- Rust Backend ---
 /target
+**/*.rs.bk
+
+# --- Python Bridge & uv ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+bridge/.venv/
+dist/
+build/
+.eggs/
+*.egg-info/
+.uv/
+
+# --- IDEs & OS Files ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
